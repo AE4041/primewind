@@ -1,0 +1,5 @@
+test/
+*.test.ts
+*.test.tsx
+vitest.config.ts
+playground/
