@@ -7,6 +7,6 @@ import '../src/index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <PrimeReactProvider value={{ unstyled: true, pt: PrimeWind }}>
-        <App />
+               <App />
     </PrimeReactProvider>
 )

@@ -4,8 +4,6 @@ export const ButtonPT = {
     root: ({ props, context }: any) => ({
         className: classNames(
             'cursor-pointer relative inline-flex items-center justify-center gap-1 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-300 h-10 px-4 py-2 border whitespace-nowrap text-center text-sm undefined',
-            'transition duration-200 ease-in-out',
-            'focus:outline-none focus:outline-offset-0',
             {
                 '[&>span>.loader]:text-gray-500 dark:[&>span>.loader]:text-gray-200 bg-white hover:enabled:bg-gray-50 active:enabled:bg-gray-100 hover:enabled:border-gray-300 dark:hover:enabled:border-gray-600 text-gray-800 dark:text-gray-100 dark:bg-gray-800 dark:hover:enabled:bg-gray-700':
                     !props.link && props.severity === null && !props.text && !props.outlined && !props.plain,
@@ -75,7 +73,7 @@ export const ButtonPT = {
         className: classNames(
             'flex-1',
             'duration-200',
-            'font-bold',
+            'font-normal',
             {
                 'hover:underline': props.link
             },
