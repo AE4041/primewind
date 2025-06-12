@@ -12,12 +12,12 @@ export const ButtonPT = {
                 'text-[var(--primary-text-color)] bg-transparent border-transparent': props.link
             },
             {
-                'text-white bg-blue-500 hover:bg-blue-600 active:enabled:bg-blue-700': props.severity === 'secondary' && !props.text && !props.outlined && !props.plain,
-                'text-white bg-green-500 hover:bg-green-600 active:enabled:bg-green-700': props.severity === 'success' && !props.text && !props.outlined && !props.plain,
-                'text-white bg-sky-500 hover:bg-sky-600 active:enabled:bg-sky-700': props.severity === 'info' && !props.text && !props.outlined && !props.plain,
-                'text-white bg-orange-500 hover:bg-orange-600 active:enabled:bg-orange-700': props.severity === 'warning' && !props.text && !props.outlined && !props.plain,
-                'text-white bg-indigo-500 hover:bg-indigo-600 active:enabled:bg-indigo-700': props.severity === 'help' && !props.text && !props.outlined && !props.plain,
-                'text-white bg-red-500 hover:bg-red-600 active:enabled:bg-red-700': props.severity === 'danger' && !props.text && !props.outlined && !props.plain
+                'text-white bg-blue-500/70 hover:bg-blue-600 active:enabled:bg-blue-700': props.severity === 'secondary' && !props.text && !props.outlined && !props.plain,
+                'text-white bg-green-500/90 hover:bg-green-600 active:enabled:bg-green-700': props.severity === 'success' && !props.text && !props.outlined && !props.plain,
+                'text-white bg-sky-500/70 hover:bg-sky-600 active:enabled:bg-sky-700': props.severity === 'info' && !props.text && !props.outlined && !props.plain,
+                'text-white bg-orange-500/70 hover:bg-orange-600 active:enabled:bg-orange-700': props.severity === 'warning' && !props.text && !props.outlined && !props.plain,
+                'text-white bg-indigo-500/70 hover:bg-indigo-600 active:enabled:bg-indigo-700': props.severity === 'help' && !props.text && !props.outlined && !props.plain,
+                'text-white bg-red-500/70 hover:bg-red-600 active:enabled:bg-red-700': props.severity === 'danger' && !props.text && !props.outlined && !props.plain
             },
             {'shadow-lg': props.raised},
             {'rounded-md': !props.rounded, 'rounded-full': props.rounded},
