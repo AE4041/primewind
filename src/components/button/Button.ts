@@ -1,14 +1,16 @@
-import { classNames } from "../../util/twMerge"
+import {classNames} from "../../util/twMerge"
 
 export const ButtonPT = {
-    root: ({ props, context }: any) => ({
+    root: ({props, context}: any) => ({
         className: classNames(
-            'cursor-pointer relative inline-flex items-center justify-center gap-1 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-300 h-10 px-4 py-2 border whitespace-nowrap text-center text-sm undefined',
+            'cursor-pointer relative inline-flex items-center justify-center gap-1 disabled:cursor-not-allowed disabled:opacity-50 h-10 border px-4 py-2 inline-flex items-center gap-1 whitespace-nowrap text-center text-sm',
+            'transition-all duration-300',
+            'focus:outline-none focus:outline-offset-0',
             {
-                '[&>span>.loader]:text-gray-500 dark:[&>span>.loader]:text-gray-200 bg-white hover:enabled:bg-gray-50 active:enabled:bg-gray-100 hover:enabled:border-gray-300 dark:hover:enabled:border-gray-600 text-gray-800 dark:text-gray-100 dark:bg-gray-800 dark:hover:enabled:bg-gray-700':
+                'bg-white hover:enabled:bg-gray-50 active:enabled:bg-gray-100 hover:enabled:border-gray-300 dark:hover:enabled:border-gray-600 border-gray-200 dark:border-[#334155] text-gray-800 dark:text-[#f1f5f9] dark:bg-[#1e293b] dark:hover:enabled:bg-gray-700 dark:active:enabled:bg-gray-800':
                     !props.link && props.severity === null && !props.text && !props.outlined && !props.plain,
                 'text-blue-600 bg-transparent border-transparent focus:shadow-[0_0_0_2px_rgba(255,255,255,1),0_0_0_4px_rgba(157,193,251,1),0_1px_2px_0_rgba(0,0,0,1)] dark:focus:shadow-[0_0_0_2px_rgba(28,33,39,1),0_0_0_4px_rgba(147,197,253,0.7),0_1px_2px_0_rgba(0,0,0,0)]':
-                    props.link
+                props.link
             },
             {
                 'focus:shadow-[0_0_0_2px_rgba(255,255,255,1),0_0_0_4px_rgba(176,185,198,1),0_1px_2px_0_rgba(0,0,0,1)] dark:focus:shadow-[0_0_0_2px_rgba(28,33,39,1),0_0_0_4px_rgba(203,213,225,0.7),0_1px_2px_0_rgba(0,0,0,0)]':
@@ -25,7 +27,7 @@ export const ButtonPT = {
                     props.severity === 'danger'
             },
             {
-                '[&>span>.loader]:text-gray-100 border border-teal-500 bg-teal-500 text-white enabled:hover:bg-teal-600 active:enabled:bg-teal-400':
+                'text-white dark:text-gray-900 bg-gray-500 dark:bg-gray-400 border border-gray-500 dark:border-gray-400 hover:bg-gray-600 dark:hover:bg-gray-500 hover:border-gray-600 dark:hover:border-gray-500':
                     props.severity === 'secondary' && !props.text && !props.outlined && !props.plain,
                 'text-white dark:text-gray-900 bg-green-500 dark:bg-green-400 border border-green-500 dark:border-green-400 hover:bg-green-600 dark:hover:bg-green-500 hover:border-green-600 dark:hover:border-green-500':
                     props.severity === 'success' && !props.text && !props.outlined && !props.plain,
@@ -38,10 +40,10 @@ export const ButtonPT = {
                 'text-white dark:text-gray-900 bg-red-500 dark:bg-red-400 border border-red-500 dark:border-red-400 hover:bg-red-600 dark:hover:bg-red-500 hover:border-red-600 dark:hover:border-red-500':
                     props.severity === 'danger' && !props.text && !props.outlined && !props.plain
             },
-            { 'shadow-lg': props.raised },
-            { 'rounded-md': !props.rounded, 'rounded-full': props.rounded },
+            {'shadow-lg': props.raised},
+            {'rounded-md': !props.rounded, 'rounded-full': props.rounded},
             {
-                '[&>span>.loader]:text-gray-500 dark:[&>span>.loader]:text-gray-200 bg-white hover:enabled:bg-gray-50 active:enabled:bg-gray-100 hover:enabled:border-gray-300 dark:hover:enabled:border-gray-600 text-gray-800 dark:text-gray-100 dark:bg-gray-800 dark:hover:enabled:bg-gray-700': props.text && !props.plain,
+                'bg-transparent border-transparent': props.text && !props.plain,
                 'text-blue-500 dark:text-blue-400 hover:bg-blue-300/20': props.text && (props.severity === null || props.severity === 'info') && !props.plain,
                 'text-gray-500 dark:text-gray-400 hover:bg-gray-300/20': props.text && props.severity === 'secondary' && !props.plain,
                 'text-green-500 dark:text-green-400 hover:bg-green-300/20': props.text && props.severity === 'success' && !props.plain,
@@ -49,7 +51,7 @@ export const ButtonPT = {
                 'text-purple-500 dark:text-purple-400 hover:bg-purple-300/20': props.text && props.severity === 'help' && !props.plain,
                 'text-red-500 dark:text-red-400 hover:bg-red-300/20': props.text && props.severity === 'danger' && !props.plain
             },
-            { 'shadow-lg': props.raised && props.text },
+            {'shadow-lg': props.raised && props.text},
             {
                 'text-gray-500 hover:bg-gray-300/20': props.plain && props.text,
                 'text-gray-500 border border-gray-500 hover:bg-gray-300/20': props.plain && props.outlined,
@@ -64,23 +66,27 @@ export const ButtonPT = {
                 'text-purple-500 dark:text-purple-400 border border-purple-500 dark:border-purple-400 hover:bg-purple-300/20': props.outlined && props.severity === 'help' && !props.plain,
                 'text-red-500 dark:text-red-400 border border-red-500 dark:border-red-400 hover:bg-red-300/20': props.outlined && props.severity === 'danger' && !props.plain
             },
-            { 'px-4 py-3 text-base': props.size === null, 'text-xs py-2 px-3': props.size === 'small', 'text-xl py-3 px-4': props.size === 'large' },
-            { 'flex-column': props.iconPos == 'top' || props.iconPos == 'bottom' },
-            { 'opacity-60 pointer-events-none cursor-default': context.disabled }
+            {
+                'px-4 py-3 text-base': props.size === null,
+                'text-xs py-2 px-3': props.size === 'small',
+                'text-xl py-3 px-4': props.size === 'large'
+            },
+            {'flex-column': props.iconPos == 'top' || props.iconPos == 'bottom'},
+            {'opacity-60 pointer-events-none cursor-default': context.disabled}
         )
     }),
-    label: ({ props }: any) => ({
+    label: ({props}: any) => ({
         className: classNames(
             'flex-1',
             'duration-200',
-            'font-normal',
+            'font-bold',
             {
                 'hover:underline': props.link
             },
-            { 'invisible w-0': props.label == null }
+            {'invisible w-0': props.label == null}
         )
     }),
-    icon: ({ props }: any) => ({
+    icon: ({props}: any) => ({
         className: classNames('mx-0', {
             'mr-2': props.iconPos == 'left' && props.label != null,
             'ml-2 order-1': props.iconPos == 'right' && props.label != null,
@@ -88,7 +94,7 @@ export const ButtonPT = {
             'mt-2 order-2': props.iconPos == 'bottom' && props.label != null
         })
     }),
-    loadingIcon: ({ props }: any) => ({
+    loadingIcon: ({props}: any) => ({
         className: classNames('mx-0', {
             'mr-2': props.loading && props.iconPos == 'left' && props.label != null,
             'ml-2 order-1': props.loading && props.iconPos == 'right' && props.label != null,
@@ -96,7 +102,7 @@ export const ButtonPT = {
             'mt-2 order-2': props.loading && props.iconPos == 'bottom' && props.label != null
         })
     }),
-    badge: ({ props }: any) => ({
-        className: classNames({ 'ml-2 w-4 h-4 leading-none flex items-center justify-center': props.badge })
+    badge: ({props}: any) => ({
+        className: classNames({'ml-2 w-4 h-4 leading-none flex items-center justify-center': props.badge})
     })
 }

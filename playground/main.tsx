@@ -5,8 +5,9 @@ import { PrimeWind } from '../src'
 import App from './App'
 import '../src/index.css'
 
+// @ts-ignore
 ReactDOM.createRoot(document.getElementById('root')!).render(
-    <PrimeReactProvider value={{ unstyled: true, pt: PrimeWind }}>
+    <PrimeReactProvider value={{pt: PrimeWind, unstyled: true}}>
                <App />
     </PrimeReactProvider>
 )
